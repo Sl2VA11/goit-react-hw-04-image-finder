@@ -1,0 +1,23 @@
+.item {
+  flex-basis: calc(100% / 4 - 30px);
+  margin-top: 30px;
+  margin-left: 30px;
+
+  border: 2px solid rgb(241, 238, 238);
+  border-radius: 10px;
+
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.item:hover,
+.item:focus {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.img {
+  display: block;
+  width: 50vh;
+  height: 30vh;
+  object-fit: cover;
+}

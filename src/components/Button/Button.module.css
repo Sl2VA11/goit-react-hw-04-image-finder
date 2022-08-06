@@ -1,0 +1,22 @@
+.btnWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.btn {
+  align-items: center;
+
+  border: none;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  background-color: rgb(99, 166, 213);
+  border-radius: 5px;
+  cursor: pointer;
+  color: #ffff;
+}
+.btn:hover,
+.btn:focus {
+  background-color: rgb(70, 116, 149);
+}
