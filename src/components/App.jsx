@@ -23,7 +23,6 @@ export class App extends Component {
         <ImageData
           image={this.state.image.searchChange}
 
-          onClick={this.onLoadMore}
         />
         
       </div>
