@@ -2,7 +2,7 @@ import { Component, useState } from 'react';
 import css from './Search.module.css'
 
 
-export function Searchbar({onSubmit}) {
+export function Searchbar({ onSubmit, setImageData }) {
   const [searchChange, setSearchChange] = useState('');
 
   const handleChange = e => {
@@ -10,15 +10,15 @@ export function Searchbar({onSubmit}) {
   };
 
   const handleSubmit = e => {
-    
     e.preventDefault();
-  
-    onSubmit(searchChange);
-    setSearchChange('')
 
+    onSubmit(searchChange);
+
+    setSearchChange('');
     
+
   };
- 
+
   return (
     <header className={css.searchbar}>
       <form className={css.form} onSubmit={handleSubmit}>
