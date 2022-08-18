@@ -1,4 +1,4 @@
-import { Component, useState } from 'react';
+import { useState } from 'react';
 import css from './Search.module.css'
 import propTypes from 'prop-types';
 
