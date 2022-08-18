@@ -1,5 +1,6 @@
 import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
 import css from './ImageGallery.module.css'
+import propTypes from 'prop-types';
 export default function ImageGallery({ images }) {
   
   return (
@@ -11,3 +12,7 @@ export default function ImageGallery({ images }) {
     </ul>
   );
 }
+
+ImageGallery.propTypes = {
+  images: propTypes.array
+};
