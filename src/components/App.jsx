@@ -1,4 +1,4 @@
-import { Component, useState } from 'react';
+import { useState } from 'react';
 import { ImageData } from './ImageData/ImageData';
 import { Searchbar } from './Searchbar/Searchbar';
 
