@@ -1,9 +1,44 @@
 // import { render } from '@testing-library/react';
-import { Component } from 'react';
+import { Component, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import css from './/Modal.module.css';
 const selectedModal = document.querySelector('#root-modal');
-export default class Modal extends Component {
+
+export function Modal({ closeModalEsp, closeModalBackdrop, image, open, tags }) {
+  const element = document.createElement('div');
+
+  useEffect(() => {
+    selectedModal.appendChild(this.element);
+    document.addEventListener('keydown', closeModalEsp);
+  }, [closeModalEsp]);
+
+  useEffect(() => {
+    return () => {
+      document.removeEventListener('keydown', closeModalEsp);
+    };
+  }, [closeModalEsp]);
+
+  if (!open) {
+    return null;
+  }
+
+  return createPortal(
+    <div className={css.overlay} onClick={closeModalBackdrop}>
+      <div>
+        <img src={image} alt={tags} />
+      </div>
+    </div>,
+    element
+  );
+}
+
+
+
+
+
+
+
+export default class Modal1 extends Component {
   element = document.createElement('div');
 
   componentDidMount() {
@@ -23,7 +58,7 @@ export default class Modal extends Component {
     return createPortal(
       <div className={css.overlay} onClick={closeModalBackdrop}>
         <div>
-          <img src={image.img} alt={tags} />
+          <img src={image} alt={tags} />
         </div>
       </div>,
       this.element

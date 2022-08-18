@@ -1,7 +1,50 @@
 import Modal from 'components/Modal/Modal';
-import { Component } from 'react';
+import { Component, useState } from 'react';
 import css from './ImageGalleryItem.module.css'
-export class ImageGalleryItem extends Component {
+
+
+export function ImageGalleryItem({ img, tags }) {
+  const [open, setOpen] = useState(false);
+
+  const closeModalEsp = e => {
+    if (e.key === 'Escape') {
+      setOpen(false);
+    }
+  };
+
+  const closeModalBackdrop = () => {
+    setOpen(false);
+  };
+
+  return (
+    <>
+      <li
+        
+        onClick={() => setOpen( true )}
+        className={css.item}
+      >
+        <img src={img} alt={tags} className={css.img} />
+      </li>
+      <Modal
+        closeModalBackdrop={closeModalBackdrop}
+        closeModalEsp={closeModalEsp}
+        open={open}
+        image={img}
+        tags={tags}
+      />
+    </>
+  );
+}
+
+
+
+
+
+
+
+
+
+export class ImageGalleryItem1 extends Component {
   state = {
     open: false,
   };

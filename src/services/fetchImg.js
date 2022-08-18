@@ -1,6 +1,6 @@
 
 export default async function fetchImg(image, page) {
-  console.log(page);
+  console.log(image);
   const settings = {
     page: page,
     image: image,

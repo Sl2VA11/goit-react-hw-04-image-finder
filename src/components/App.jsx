@@ -1,32 +1,29 @@
-import { Component } from 'react';
+import { Component, useState } from 'react';
 import { ImageData } from './ImageData/ImageData';
 import { Searchbar } from './Searchbar/Searchbar';
 
+export function App() {
+  const [images, setImages] = useState('');
 
-export class App extends Component {
-  state = {
-    image: '',
+  const onSubmit = image => {
+    if (image === images) {
+      return
+    }
+    console.log(image === images);
+    console.log(image);
+    setImages(image);
   };
 
-  onSubmit = image => {
-    this.setState({ image });
-  };
-
-  
-
-  render() {
+  return (
     
-    return (
-      <div>
-        
-        <Searchbar onSubmit={this.onSubmit} />
-        <ImageData
-          image={this.state.image.searchChange}
-
-        />
-        
-      </div>
-    );
-    
-  }
+    <div>
+      <Searchbar onSubmit={onSubmit} />
+     
+       {images !== '' && <ImageData image={images} />}
+      
+     
+    </div>
+  );
 }
+
+
